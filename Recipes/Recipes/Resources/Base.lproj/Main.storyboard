@@ -32,7 +32,7 @@
                                 <rect key="frame" x="16" y="113" width="343" height="534"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="n9n-mk-9Rc" kind="embed" identifier="ShowRecipe" id="muU-g4-Bnd"/>
+                                    <segue destination="n9n-mk-9Rc" kind="embed" identifier="ShowRecipeTable" id="muU-g4-Bnd"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -48,22 +48,34 @@
             </objects>
             <point key="canvasLocation" x="572" y="-5.8470764617691158"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Recipes Table View Controller-->
         <scene sceneID="ngh-rn-fxg">
             <objects>
-                <tableViewController id="n9n-mk-9Rc" sceneMemberID="viewController">
+                <tableViewController id="n9n-mk-9Rc" customClass="RecipesTableViewController" customModule="Recipes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7yw-4s-SoS">
                         <rect key="frame" x="0.0" y="0.0" width="343" height="534"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Jm2-gD-WNz">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" textLabel="XrG-DQ-mQu" style="IBUITableViewCellStyleDefault" id="Jm2-gD-WNz">
                                 <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jm2-gD-WNz" id="K7l-Ue-DUY">
                                     <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XrG-DQ-mQu">
+                                            <rect key="frame" x="16" y="0.0" width="311" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Q2y-D5-p1q" kind="show" identifier="ShowRecipe" id="hG5-Ve-CCH"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -75,6 +87,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lNV-6x-XWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1329" y="-6"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="nhP-h5-bQf">
+            <objects>
+                <viewController id="Q2y-D5-p1q" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Fw-ma-MKk">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="534"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="OY5-9t-q4T"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ym-EI-SRE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2097" y="-7"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4hg-Ji-p2u">
